@@ -226,11 +226,10 @@ ifeq ($(RECOVERY_VARIANT),twrp)
 endif
 
 # SELinux
-include device/qcom/sepolicy-legacy-um/SEPolicy.mk
-
-BOARD_VENDOR_SEPOLICY_DIRS += \
+include device/qcom/sepolicy-legacy/sepolicy.mk
+    BOARD_SEPOLICY_DIRS += \
     $(COMMON_PATH)/sepolicy
-
+    
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/lib/libmmjpeg_interface.so|libboringssl-compat.so \
